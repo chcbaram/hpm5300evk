@@ -79,6 +79,7 @@ set(SRC_FILES_SDK
   ${HPM_SDK_DIR}/drivers/src/hpm_pllctlv2_drv.c
   ${HPM_SDK_DIR}/drivers/src/hpm_pcfg_drv.c
   ${HPM_SDK_DIR}/drivers/src/hpm_pmp_drv.c
+  ${HPM_SDK_DIR}/drivers/src/hpm_dmav2_drv.c
   )
 
 
