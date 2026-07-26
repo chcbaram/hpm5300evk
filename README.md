@@ -28,7 +28,10 @@ VS Code 는 시작 시 로그인 셸(`zsh -l`)로 환경을 수집하므로 `.zs
 ```sh
 export HPM_RISCV_TOOLCHAIN_DIR="$HOME/hdd/tools/xpack-riscv-none-elf-gcc-13.4.0-1"
 export HPM_RISCV_OPENOCD_PATH="$HOME/hdd/tools/hpmicro/openocd/bin"
+export HPM_RISCV_GDB="$HOME/hdd/tools/xpack-riscv-none-elf-gcc-12.2.0-3/bin/riscv-none-elf-gdb-py3"
 ```
+
+빌드용 툴체인과 디버깅용 gdb 가 다른 버전인 것은 의도한 것이다 — 아래 참조.
 
 ## 빌드
 
@@ -47,11 +50,28 @@ $HPM_RISCV_OPENOCD_PATH/openocd -s tools/openocd -f hpm5361-fw.cfg \
 ```
 
 VS Code 는 `.vscode/launch.json` 의 **HPM5361 Debug (OpenOCD)** 를 사용한다
-(cortex-debug 은 ARM 전용이라 쓸 수 없어 `cppdbg` + OpenOCD 조합이다).
+(cortex-debug 은 ARM 대상이고 RISC-V 는 공식 지원이 아니라 `cppdbg` + OpenOCD 조합이다).
+F5 를 누르면 빌드 → OpenOCD 기동 → 플래시 기록 → `reset halt` 후 `_start` 에서 멈춘다.
+이후 브레이크포인트는 에디터에서 F9 로 찍는다.
 
-> gdb 는 반드시 **`riscv-none-elf-gdb-py3`** 를 써야 한다.
-> xpack 의 `riscv-none-elf-gdb` 는 Python 없이 빌드되어 있어, cppdbg 가 보내는 python 명령을
-> 받으면 에러 대신 abort 로 죽는다 (`GDB exited unexpectedly with exit code 134`).
+### gdb 는 12.2.0-3 것을 쓸 것
+
+xpack 이 2025-10 배치로 빌드한 **gdb 16.3 (arm64 macOS)** 은 에러를 던지는 모든 명령에서
+`uncaught gdb_exception_error` 로 abort 한다. cppdbg 가 시작 직후 보내는
+`set debuginfod enabled on` 에서 바로 죽어 디버깅을 시작할 수 없다
+(`GDB exited unexpectedly with exit code 134`).
+
+13.4.0-1 과 15.2.0-1 에서 동일하게 재현했다. gcc 문제가 아니라 gdb 바이너리 문제이며,
+같은 배치의 12.5.0-1 / 14.3.0-1 도 같을 가능성이 높다.
+2023 년 빌드인 **12.2.0-3 의 gdb 12.1 은 정상**이고, GCC 13/15 가 만든 DWARF 도 문제없이 읽는다.
+
+어떤 gdb 든 아래 한 줄로 판별된다.
+
+```sh
+<gdb경로> --batch -ex "print nosuchsymbol" -ex "echo OK\n"
+#  "No symbol table is loaded... OK"        -> 정상
+#  "libc++abi: terminating... Abort trap: 6" -> 사용 불가
+```
 
 콘솔은 UART0 (PA00/PA01) 115200 8N1 이며 온보드 FT2232 의 VCP 로 나온다.
 
