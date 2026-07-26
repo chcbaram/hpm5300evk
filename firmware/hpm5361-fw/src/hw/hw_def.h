@@ -15,9 +15,25 @@
 #define      HW_LED_MAX_CH          1
 
 #define _USE_HW_UART
-#define      HW_UART_MAX_CH         1
-#define      HW_UART_CH_DEBUG       _DEF_UART1
+#define      HW_UART_MAX_CH         2
+#define      HW_UART_CH_DEBUG       _DEF_UART1     /* ch0 = UART0 (PA00/PA01), FT2232 VCP */
+#define      HW_UART_CH_USB         _DEF_UART2     /* ch1 = USB CDC (가상 채널) */
 #define      HW_UART_CH_CLI         HW_UART_CH_DEBUG
+
+
+//-- USB (CDC)
+//
+#define _USE_HW_USB
+#define _USE_HW_CDC
+#define      HW_USE_CDC             1
+
+/* USB 스택 선택 : 0 = CherryUSB, 1 = TinyUSB
+   빌드에서 -DHW_USB_STACK=1 로 오버라이드 가능 */
+#define      HW_USB_STACK_CHERRYUSB 0
+#define      HW_USB_STACK_TINYUSB   1
+#ifndef      HW_USB_STACK
+#define      HW_USB_STACK           HW_USB_STACK_CHERRYUSB
+#endif
 
 #define _USE_HW_CLI
 #define      HW_CLI_CMD_LIST_MAX    32
@@ -42,6 +58,7 @@
 //
 #define _USE_CLI_HW_LOG             1
 #define _USE_CLI_HW_UART            1
+#define _USE_CLI_HW_USB             1
 
 
 #endif

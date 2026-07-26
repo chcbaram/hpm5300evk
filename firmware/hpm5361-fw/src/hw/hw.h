@@ -14,6 +14,8 @@ extern "C" {
 #include "log.h"
 #include "swtimer.h"
 #include "qbuffer.h"
+#include "cdc.h"
+#include "usb/usb.h"
 
 #include "hpm5361_it.h"
 

@@ -19,6 +19,9 @@
 
 #include "cli.h"
 #include "qbuffer.h"
+#if HW_USE_CDC == 1
+#include "cdc.h"
+#endif
 #include "hpm_uart_drv.h"
 #include "hpm_clock_drv.h"
 #include "hpm_dmav2_drv.h"
@@ -84,6 +87,7 @@ bool uartInit(void)
     qbufferCreate(&uart_tbl[i].qbuffer, uart_rx_buf[i], UART_RX_BUF_SIZE);
   }
 
+  /* ch1 = USB CDC : 하드웨어 핸들이 없는 가상 채널이다 */
   uart_tbl[HW_UART_CH_DEBUG].p_uart  = HPM_UART0;
   uart_tbl[HW_UART_CH_DEBUG].clock   = clock_uart0;
   uart_tbl[HW_UART_CH_DEBUG].p_dma   = HPM_HDMA;
@@ -122,6 +126,17 @@ bool uartOpen(uint8_t ch, uint32_t baud)
     uart_tbl[ch].is_open = uart_tbl[ch].p_driver->open(baud);
     return uart_tbl[ch].is_open;
   }
+
+#if HW_USE_CDC == 1
+  if (ch == HW_UART_CH_USB)
+  {
+    /* USB 스택은 usbInit() 이 따로 올린다. 여기서는 열림 표시만 한다.
+       (스택 초기화 전에 호출돼도 안전해야 한다) */
+    uart_tbl[ch].baud    = baud;
+    uart_tbl[ch].is_open = true;
+    return true;
+  }
+#endif
 
   /*
    * 순서 주의 : pinmux -> clock -> uart_init.
@@ -258,6 +273,10 @@ uint32_t uartAvailable(uint8_t ch)
     return uart_tbl[ch].p_driver->available();
   }
 
+#if HW_USE_CDC == 1
+  if (ch == HW_UART_CH_USB) return cdcAvailable();
+#endif
+
   uartUpdateRxIn(ch);
 
   return qbufferAvailable(&uart_tbl[ch].qbuffer);
@@ -271,6 +290,19 @@ bool uartFlush(uint8_t ch)
   {
     return uart_tbl[ch].p_driver->flush();
   }
+
+#if HW_USE_CDC == 1
+  if (ch == HW_UART_CH_USB)
+  {
+    uint32_t pre_time = millis();
+    while (uartAvailable(ch) > 0)
+    {
+      if (millis() - pre_time >= 10) break;
+      uartRead(ch);
+    }
+    return true;
+  }
+#endif
 
   uartUpdateRxIn(ch);
   uart_tbl[ch].qbuffer.out = uart_tbl[ch].qbuffer.in;
@@ -290,6 +322,15 @@ uint8_t uartRead(uint8_t ch)
   {
     return uart_tbl[ch].p_driver->read();
   }
+
+#if HW_USE_CDC == 1
+  if (ch == HW_UART_CH_USB)
+  {
+    ret = cdcRead();
+    uart_tbl[ch].rx_cnt++;
+    return ret;
+  }
+#endif
 
   if (uartAvailable(ch) == 0) return 0;
 
@@ -311,6 +352,15 @@ uint32_t uartWrite(uint8_t ch, uint8_t *p_data, uint32_t length)
   {
     return uart_tbl[ch].p_driver->write(p_data, length);
   }
+
+#if HW_USE_CDC == 1
+  if (ch == HW_UART_CH_USB)
+  {
+    ret = cdcWrite(p_data, length);
+    uart_tbl[ch].tx_cnt += ret;
+    return ret;
+  }
+#endif
 
   for (uint32_t i=0; i<length; i++)
   {
@@ -349,6 +399,11 @@ uint32_t uartGetBaud(uint8_t ch)
 {
   if (ch >= UART_MAX_CH) return 0;
 
+#if HW_USE_CDC == 1
+  /* USB 는 호스트가 SET_LINE_CODING 으로 지정한 값이 실제 보레이트다 */
+  if (ch == HW_UART_CH_USB) return cdcGetBaud();
+#endif
+
   return uart_tbl[ch].baud;
 }
 
@@ -375,11 +430,20 @@ void cliUart(cli_args_t *args)
 
   if (args->argc == 1 && args->isStr(0, "info"))
   {
+    const char *ch_name[UART_MAX_CH] =
+    {
+      "UART0(FT2232)",
+#if HW_UART_MAX_CH >= 2
+      "USB (CDC)    ",
+#endif
+    };
+
     for (int i=0; i<UART_MAX_CH; i++)
     {
-      cliPrintf("uart ch%d : %d bps, open %d, rx %d, tx %d\n",
+      cliPrintf("ch%d %s : %d bps, open %d, rx %d, tx %d\n",
                 i,
-                (int)uart_tbl[i].baud,
+                ch_name[i],
+                (int)uartGetBaud(i),
                 uart_tbl[i].is_open,
                 (int)uart_tbl[i].rx_cnt,
                 (int)uart_tbl[i].tx_cnt);

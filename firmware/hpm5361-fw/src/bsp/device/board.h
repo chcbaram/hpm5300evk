@@ -64,6 +64,9 @@ void board_init(void);
 void board_init_clock(void);
 void board_init_pmp(void);
 
+void board_init_usb_dp_dm_pins(void);
+void board_init_usb(USB_Type *ptr);
+
 void board_ungate_mchtmr_at_lp_mode(void);
 
 void board_delay_us(uint32_t us);

@@ -17,6 +17,14 @@ project(${PRJ_NAME}
 set(EXECUTABLE ${PRJ_NAME}.elf)
 
 
+# USB 스택 선택 : 0 = CherryUSB, 1 = TinyUSB
+#   cmake -DHW_USB_STACK=1 -S . -B build  으로 전환
+#
+if(NOT DEFINED HW_USB_STACK)
+  set(HW_USB_STACK 0)
+endif()
+
+
 
 # 지정한 폴더에 있는 파일만 포함한다.
 #
@@ -41,8 +49,16 @@ file(GLOB_RECURSE SRC_FILES_RECURSE CONFIGURE_DEPENDS
 
 # 특정 폴더를 빌드에서 제외한다.
 #
+# USB 스택별 글루는 재귀 glob 에서 빼고, 선택된 스택일 때만 USB_SRC_FILES 로 명시 추가한다.
+#
 set(EXCLUDE_PATHS
 )
+
+if(HW_USB_STACK EQUAL 0)
+  list(APPEND EXCLUDE_PATHS src/hw/driver/usb/tinyusb)
+else()
+  list(APPEND EXCLUDE_PATHS src/hw/driver/usb/cherryusb)
+endif()
 
 foreach(TMP_PATH ${SRC_FILES_RECURSE})
   foreach(EXCLUDE_PATH ${EXCLUDE_PATHS})
@@ -80,13 +96,43 @@ set(SRC_FILES_SDK
   ${HPM_SDK_DIR}/drivers/src/hpm_pcfg_drv.c
   ${HPM_SDK_DIR}/drivers/src/hpm_pmp_drv.c
   ${HPM_SDK_DIR}/drivers/src/hpm_dmav2_drv.c
+  ${HPM_SDK_DIR}/drivers/src/hpm_usb_drv.c
   )
+
+
+# USB 스택별 소스 / 인클루드
+#
+if(HW_USB_STACK EQUAL 0)
+  set(USB_SRC_FILES
+    ${HPM_SDK_DIR}/middleware/cherryusb/core/usbd_core.c
+    ${HPM_SDK_DIR}/middleware/cherryusb/class/cdc/usbd_cdc_acm.c
+    ${HPM_SDK_DIR}/middleware/cherryusb/port/hpmicro/usb_dc_hpm.c
+    ${HPM_SDK_DIR}/middleware/cherryusb/port/hpmicro/usb_glue_hpm.c
+    ${HPM_SDK_DIR}/components/usb/device/hpm_usb_device.c
+  )
+  set(USB_INC_DIRS
+    src/hw/driver/usb
+    src/hw/driver/usb/cherryusb
+    ${HPM_SDK_DIR}/middleware/cherryusb/common
+    ${HPM_SDK_DIR}/middleware/cherryusb/core
+    ${HPM_SDK_DIR}/middleware/cherryusb/class/cdc
+    ${HPM_SDK_DIR}/middleware/cherryusb/port/hpmicro
+    ${HPM_SDK_DIR}/components/usb/device
+  )
+else()
+  set(USB_SRC_FILES)
+  set(USB_INC_DIRS
+    src/hw/driver/usb
+    src/hw/driver/usb/tinyusb
+  )
+endif()
 
 
 add_executable(${EXECUTABLE}
   ${SRC_FILES}
   ${SRC_FILES_RECURSE}
   ${SRC_FILES_SDK}
+  ${USB_SRC_FILES}
 )
 
 
@@ -116,6 +162,9 @@ target_include_directories(${EXECUTABLE} PRIVATE
   ${HPM_SDK_DIR}/drivers/inc
   ${HPM_SDK_DIR}/utils
   ${HPM_SDK_DIR}/generated/include
+
+  # USB (스택별 — 위 HW_USB_STACK 분기에서 설정)
+  ${USB_INC_DIRS}
 )
 
 
@@ -124,6 +173,10 @@ target_include_directories(${EXECUTABLE} PRIVATE
 #
 target_compile_definitions(${EXECUTABLE} PRIVATE
   -DFLASH_XIP=1
+
+  -DHW_USB_STACK=${HW_USB_STACK}
+  # QHD/QTD 디스크립터 배열 크기. 기본 8 이면 DLM 을 10KB 먹는다. CDC 에는 2 로 충분(각 QTD 가 16KB 담당).
+  -DUSB_SOC_DCD_QTD_COUNT_EACH_ENDPOINT=2
 
   -DHPMSOC_HAS_HPMSDK_GPIO=y
   -DHPMSOC_HAS_HPMSDK_PLIC=y

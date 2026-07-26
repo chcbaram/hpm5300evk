@@ -42,6 +42,11 @@ bool hwInit(void)
 
   hwPrintFault();
 
+  /* 순서 중요 : cdcInit() 이 q_rx/q_tx 를 만든 뒤에 usbInit() 이 스택을 올려야 한다.
+     반대면 초기화 안 된 링버퍼에 ISR 이 qbufferWrite 하는 레이스가 된다. */
+  cdcInit();
+  usbInit();
+
   logBoot(false);
 
   return true;

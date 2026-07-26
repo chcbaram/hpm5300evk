@@ -14,6 +14,7 @@
 #include "hpm_sysctl_drv.h"
 #include "hpm_pllctlv2_drv.h"
 #include "hpm_pcfg_drv.h"
+#include "hpm_usb_drv.h"
 
 
 /**
@@ -86,9 +87,57 @@ static void board_init_clock_source(void)
 }
 
 
+/*
+ * 리셋 직후 PHY 에는 호스트측 DP/DM 풀다운(45ohm)이 걸려 있다.
+ * 이걸 해제하지 않으면 호스트가 connect/idle 시그널링을 제대로 읽지 못해 열거에 실패한다.
+ * PHY_CTRL0 를 건드리려면 USB 클럭이 살아 있어야 해서, XTAL 상태를 보고 임시로
+ * 클럭을 붙였다 떼는 절차가 필요하다. (hpm_sdk boards/hpm5300evk/board.c 원본 그대로)
+ *
+ * 클럭 재설정(board_init_clock) 보다 반드시 먼저 호출해야 한다.
+ */
+void board_init_usb_dp_dm_pins(void)
+{
+    while (sysctl_resource_any_is_busy(HPM_SYSCTL)) {
+        ;
+    }
+    if (pllctlv2_xtal_is_stable(HPM_PLLCTLV2) && pllctlv2_xtal_is_enabled(HPM_PLLCTLV2)) {
+        if (clock_check_in_group(clock_usb0, 0)) {
+            usb_phy_disable_dp_dm_pulldown(HPM_USB0);
+        } else {
+            clock_add_to_group(clock_usb0, 0);
+            usb_phy_disable_dp_dm_pulldown(HPM_USB0);
+            clock_remove_from_group(clock_usb0, 0);
+        }
+    } else {
+        uint8_t tmp;
+        tmp = sysctl_resource_target_get_mode(HPM_SYSCTL, sysctl_resource_xtal);
+        sysctl_resource_target_set_mode(HPM_SYSCTL, sysctl_resource_xtal, 0x03);    /* NOLINT */
+        clock_add_to_group(clock_usb0, 0);
+        usb_phy_disable_dp_dm_pulldown(HPM_USB0);
+        clock_remove_from_group(clock_usb0, 0);
+        while (sysctl_resource_target_is_busy(HPM_SYSCTL, sysctl_resource_usb0)) {
+            ;
+        }
+        sysctl_resource_target_set_mode(HPM_SYSCTL, sysctl_resource_xtal, tmp);
+    }
+}
+
+/*
+ * 디바이스 전용 초기화. SDK 원본의 usb_hcd_set_power_ctrl_polarity() + 100ms 지연은
+ * 호스트 모드용이라 뺐다. PY00/PY01/PY02(ID/OC/PWR) 핀먹스도 디바이스에는 불필요하다.
+ */
+void board_init_usb(USB_Type *ptr)
+{
+    if (ptr == HPM_USB0) {
+        clock_add_to_group(clock_usb0, 0);
+    }
+}
+
+
 void board_init(void)
 {
     board_init_py_pins();
+    board_init_usb_dp_dm_pins();    /* 클럭 재설정 전에 와야 한다 */
 
     board_init_clock();
     board_init_pmp();
