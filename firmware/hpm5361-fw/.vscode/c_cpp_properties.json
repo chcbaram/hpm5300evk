@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "HPM5361",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "FLASH_XIP=1"
+            ],
+            "compilerPath": "${env:HPM_RISCV_TOOLCHAIN_DIR}/bin/riscv-none-elf-gcc",
+            "compilerArgs": [
+                "-march=rv32imac_zicsr_zifencei_zba_zbb_zbc_zbs",
+                "-mabi=ilp32"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-x86",
+            "compileCommands": "build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

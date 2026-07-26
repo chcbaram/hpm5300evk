@@ -1,0 +1,66 @@
+{
+  // cortex-debug 은 ARM 전용이라 RISC-V 에서는 쓸 수 없다.
+  // MS C/C++ 확장(cppdbg)으로 OpenOCD 를 GDB 서버로 띄운다.
+  //
+  // 필요한 환경변수 (~/.zshenv 에 둘 것 — .zshrc 는 대화형 셸에서만 읽혀서
+  // VS Code 가 로그인 셸로 환경을 수집할 때 보이지 않는다)
+  //   export HPM_RISCV_TOOLCHAIN_DIR="$HOME/hdd/tools/xpack-riscv-none-elf-gcc-13.4.0-1"
+  //   export HPM_RISCV_OPENOCD_PATH="$HOME/hdd/tools/hpmicro/openocd/bin"
+  //
+  // gdb 는 반드시 -py3 변형이어야 한다.
+  // xpack 의 riscv-none-elf-gdb 는 Python 없이 빌드되어 있고, cppdbg 가 보내는
+  // python 명령을 받으면 에러가 아니라 abort(SIGABRT, exit 134) 로 죽는다.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "HPM5361 Debug (OpenOCD)",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/hpm5361-fw.elf",
+      "MIMode": "gdb",
+      "miDebuggerPath": "${env:HPM_RISCV_TOOLCHAIN_DIR}/bin/riscv-none-elf-gdb-py3",
+      "miDebuggerServerAddress": "localhost:3333",
+      "debugServerPath": "${env:HPM_RISCV_OPENOCD_PATH}/openocd",
+      "debugServerArgs": "-s ${workspaceFolder}/tools/openocd -f hpm5361-fw.cfg",
+      "serverStarted": "Listening on port 3333 for gdb connections",
+      "filterStderr": true,
+      "stopAtConnect": true,
+      "preLaunchTask": "build-build",
+      "setupCommands": [
+        { "text": "set architecture riscv:rv32" },
+        { "text": "set remotetimeout 60" },
+        { "text": "set mem inaccessible-by-default off" }
+      ],
+      "postRemoteConnectCommands": [
+        // 순서 중요 : load 만 하면 PC 가 ROM 에 남아 있어 앱이 시작되지 않는다.
+        // reset halt 로 ROM 부트로더를 다시 태워야 XIP 로 진입한다.
+        { "text": "load" },
+        { "text": "monitor reset halt" },
+        { "text": "tbreak main" }
+      ],
+      "launchCompleteCommand": "exec-continue"
+    },
+    {
+      // 이미 동작 중인 펌웨어에 기록 없이 붙는다.
+      "name": "HPM5361 Attach (OpenOCD)",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/hpm5361-fw.elf",
+      "MIMode": "gdb",
+      "miDebuggerPath": "${env:HPM_RISCV_TOOLCHAIN_DIR}/bin/riscv-none-elf-gdb-py3",
+      "miDebuggerServerAddress": "localhost:3333",
+      "debugServerPath": "${env:HPM_RISCV_OPENOCD_PATH}/openocd",
+      "debugServerArgs": "-s ${workspaceFolder}/tools/openocd -f hpm5361-fw.cfg",
+      "serverStarted": "Listening on port 3333 for gdb connections",
+      "filterStderr": true,
+      "stopAtConnect": true,
+      "setupCommands": [
+        { "text": "set architecture riscv:rv32" },
+        { "text": "set remotetimeout 60" },
+        { "text": "set mem inaccessible-by-default off" }
+      ]
+    }
+  ]
+}
