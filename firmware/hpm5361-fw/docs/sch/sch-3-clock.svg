@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1060" width="1700" height="1060">
+<rect x="0" y="0" width="1700" height="1060" fill="#ffffff"/>
+<rect x="10" y="10" width="1680" height="1040" fill="none" stroke="#bbb" stroke-width="2"/>
+<text x="38" y="52" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="26" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">3 / 3   클럭 · 리셋 · 부트 · VBUS 감지</text>
+<text x="38" y="78" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">LQFP100은 내부 RC 부팅 미지원 → 24MHz 크리스털은 필수 부품</text>
+<rect x="120" y="130" width="180" height="260" rx="0" fill="#f4f7fb" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="210.0" y="118" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">U1D</text>
+<text x="210.0" y="412" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">HPM5361ICB1</text>
+<text x="132" y="195" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">XTALI</text>
+<line x1="300" y1="190" x2="340" y2="190" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="320" y="182" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">74</text>
+<text x="132" y="335" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">XTALO</text>
+<line x1="300" y1="330" x2="340" y2="330" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="320" y="322" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">75</text>
+<line x1="340" y1="190" x2="470" y2="190" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="340" y1="330" x2="470" y2="330" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="390" cy="190" r="4.2" fill="#1a1a1a"/>
+<line x1="390" y1="190" x2="390" y2="207" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="377" y1="207" x2="403" y2="207" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="377" y1="215" x2="403" y2="215" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="390" y1="215" x2="390" y2="228" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="407" y="209" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">C33</text>
+<text x="407" y="223" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">12pF</text>
+<text x="407" y="236" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">C0G 0402</text>
+<line x1="390" y1="228" x2="390" y2="240" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="375" y1="240" x2="405" y2="240" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="381" y1="246" x2="399" y2="246" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="387" y1="252" x2="393" y2="252" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="390" cy="330" r="4.2" fill="#1a1a1a"/>
+<line x1="390" y1="330" x2="390" y2="347" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="377" y1="347" x2="403" y2="347" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="377" y1="355" x2="403" y2="355" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="390" y1="355" x2="390" y2="368" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="407" y="349" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">C34</text>
+<text x="407" y="363" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">12pF</text>
+<text x="407" y="376" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">C0G 0402</text>
+<line x1="390" y1="368" x2="390" y2="380" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="375" y1="380" x2="405" y2="380" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="381" y1="386" x2="399" y2="386" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="387" y1="392" x2="393" y2="392" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="470" y1="190" x2="470" y2="225.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="450" y1="225.0" x2="490" y2="225.0" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="455" y="232.0" width="30" height="56" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="450" y1="295.0" x2="490" y2="295.0" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="470" y1="295.0" x2="470" y2="330" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="502" y="248.0" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">X1</text>
+<text x="502" y="266.0" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">24MHz · CL 10pF</text>
+<text x="502" y="283.0" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">±10ppm · ESR 50Ω</text>
+<text x="502" y="300.0" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">C70583 (Basic)</text>
+<text x="502" y="317.0" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">패드 2,4 = GND</text>
+<rect x="700" y="140" width="560" height="150" rx="6" fill="#fffdf0" stroke="#c9a227" stroke-width="1.8"/>
+<text x="714" y="164" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#8a6d00" text-anchor="start">24MHz 수치 근거</text>
+<text x="714" y="190" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">발진기가 보는 부하 = 12pF ∥ 12pF + stray 3.5pF ≈ 9.5pF</text>
+<text x="714" y="212" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">크리스털 규격 10pF 대비 +11ppm   (USB HS 요구 ±500ppm)</text>
+<text x="714" y="234" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">ESR 50Ω ≤ 데이터시트 규격 40~80Ω (표13)</text>
+<text x="714" y="256" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">배선 5mm 이내 · 하부 통 GND · 주변 디지털 신호 금지</text>
+<text x="714" y="278" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">이 회로가 죽으면 칩이 부팅되지 않는다 (표44)</text>
+<rect x="120" y="500" width="180" height="120" rx="0" fill="#f4f7fb" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="210.0" y="488" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">U1D</text>
+<text x="210.0" y="642" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">HPM5361ICB1</text>
+<text x="132" y="565" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">RESETN</text>
+<line x1="300" y1="560" x2="340" y2="560" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="320" y="552" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">26</text>
+<line x1="340" y1="560" x2="620" y2="560" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="430" cy="560" r="4.2" fill="#1a1a1a"/>
+<line x1="430" y1="560" x2="430" y2="577" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="417" y1="577" x2="443" y2="577" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="417" y1="585" x2="443" y2="585" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="430" y1="585" x2="430" y2="598" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="447" y="579" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">C35</text>
+<text x="447" y="593" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">100nF</text>
+<text x="447" y="606" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">0402</text>
+<line x1="430" y1="598" x2="430" y2="610" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="415" y1="610" x2="445" y2="610" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="421" y1="616" x2="439" y2="616" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="427" y1="622" x2="433" y2="622" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="540" cy="560" r="4.2" fill="#1a1a1a"/>
+<line x1="540" y1="460" x2="540" y2="471" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="531" y="471" width="18" height="34" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="540" y1="505" x2="540" y2="516" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="557" y="486" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">R1</text>
+<text x="557" y="500" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">10k</text>
+<line x1="540" y1="516" x2="540" y2="560" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="540" y1="460" x2="540" y2="440" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="540,440 552,427 607,427 607,453 552,453" fill="#eaf2fb" stroke="#0b5cad" stroke-width="1.8"/>
+<text x="560" y="445" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#0b5cad" text-anchor="start">+3V3D</text>
+<rect x="620" y="540" width="76" height="40" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="658" y="565" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">SW1</text>
+<line x1="696" y1="560" x2="750" y2="560" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="750" y1="560" x2="750" y2="572" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="735" y1="572" x2="765" y2="572" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="741" y1="578" x2="759" y2="578" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="747" y1="584" x2="753" y2="584" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<text x="620" y="606" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">리셋 버튼 (옵션)</text>
+<text x="120" y="672" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="start">RESET_N 저레벨 요구 ≥ 300us (표12)  →  10k x 100nF = 1ms 로 충족</text>
+<rect x="120" y="760" width="180" height="190" rx="0" fill="#f4f7fb" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="210.0" y="748" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">U1D</text>
+<text x="210.0" y="972" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">HPM5361ICB1</text>
+<text x="132" y="825" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">PA03 / BOOT1</text>
+<line x1="300" y1="820" x2="340" y2="820" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="320" y="812" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">18</text>
+<text x="132" y="915" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">PA02 / BOOT0</text>
+<line x1="300" y1="910" x2="340" y2="910" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="320" y="902" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">19</text>
+<line x1="340" y1="820" x2="440" y2="820" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="440" y1="820" x2="440" y2="831" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="431" y="831" width="18" height="34" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="440" y1="865" x2="440" y2="876" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="457" y="846" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">R2</text>
+<text x="457" y="860" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">10k</text>
+<line x1="440" y1="876" x2="440" y2="888" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="425" y1="888" x2="455" y2="888" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="431" y1="894" x2="449" y2="894" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="437" y1="900" x2="443" y2="900" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="340" y1="910" x2="620" y2="910" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="440" cy="910" r="4.2" fill="#1a1a1a"/>
+<line x1="440" y1="910" x2="440" y2="921" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="431" y="921" width="18" height="34" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="440" y1="955" x2="440" y2="966" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="457" y="936" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">R3</text>
+<text x="457" y="950" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">10k</text>
+<line x1="440" y1="966" x2="440" y2="978" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="425" y1="978" x2="455" y2="978" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="431" y1="984" x2="449" y2="984" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="437" y1="990" x2="443" y2="990" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="620" y="890" width="76" height="40" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="658" y="915" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">SW2</text>
+<line x1="696" y1="910" x2="770" y2="910" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="770,910 782,897 837,897 837,923 782,923" fill="#eaf2fb" stroke="#0b5cad" stroke-width="1.8"/>
+<text x="790" y="915" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#0b5cad" text-anchor="start">+3V3D</text>
+<text x="560" y="968" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="start">누른 채 전원 인가 = USB DFU 진입 (패드 필수)</text>
+<rect x="900" y="770" width="520" height="150" rx="6" fill="#fffdf0" stroke="#c9a227" stroke-width="1.8"/>
+<text x="914" y="794" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#8a6d00" text-anchor="start">부트 모드</text>
+<text x="914" y="820" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">BOOT_MODE[1:0] = [PA03 : PA02]   (표4)</text>
+<text x="914" y="842" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">0 0 → XPI NOR 부팅  (정상 동작)</text>
+<text x="914" y="864" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">0 1 → ISP / 시리얼 부팅  ← LQFP100은 USB0 사용 가능</text>
+<text x="914" y="886" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">1 0 → ISP / 시리얼 부팅</text>
+<text x="914" y="908" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">1 1 → 예약</text>
+<rect x="1150" y="440" width="180" height="200" rx="0" fill="#f4f7fb" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="1240.0" y="428" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">U1D</text>
+<text x="1240.0" y="662" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">HPM5361ICB1</text>
+<text x="1162" y="505" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">WAKEUP</text>
+<line x1="1330" y1="500" x2="1370" y2="500" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1350" y="492" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">27</text>
+<text x="1162" y="605" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">USBVBUS</text>
+<line x1="1330" y1="600" x2="1370" y2="600" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1350" y="592" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11" font-weight="normal" font-style="normal" fill="#b3261e" text-anchor="middle">68</text>
+<line x1="1370" y1="500" x2="1560" y2="500" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="1560" y1="500" x2="1560" y2="511" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="1551" y="511" width="18" height="34" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="1560" y1="545" x2="1560" y2="556" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1577" y="526" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">R4</text>
+<text x="1577" y="540" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">10k</text>
+<line x1="1560" y1="556" x2="1560" y2="568" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="1545" y1="568" x2="1575" y2="568" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1551" y1="574" x2="1569" y2="574" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1557" y1="580" x2="1563" y2="580" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<text x="1150" y="700" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">WAKEUP 극성은 데이터시트 미기재 →</text>
+<text x="1150" y="718" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">패드만 남기고 확정 레벨로 고정</text>
+<line x1="1370" y1="600" x2="1420" y2="600" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="1420" cy="600" r="4.2" fill="#1a1a1a"/>
+<line x1="1420" y1="600" x2="1420" y2="617" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="1407" y1="617" x2="1433" y2="617" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1407" y1="625" x2="1433" y2="625" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1420" y1="625" x2="1420" y2="638" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1358" y="619" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="start">C36</text>
+<text x="1358" y="633" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="start">100nF</text>
+<text x="1358" y="646" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">0402</text>
+<line x1="1420" y1="638" x2="1420" y2="650" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="1405" y1="650" x2="1435" y2="650" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1411" y1="656" x2="1429" y2="656" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1417" y1="662" x2="1423" y2="662" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="1450" y1="600" x2="1461" y2="600" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="1461" y="591" width="34" height="18" rx="0" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="1495" y1="600" x2="1506" y2="600" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="1478" y="584" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12.5" font-weight="bold" font-style="normal" fill="#1a1a1a" text-anchor="middle">R5</text>
+<text x="1478" y="628" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" font-weight="normal" font-style="normal" fill="#1a1a1a" text-anchor="middle">1k</text>
+<line x1="1506" y1="600" x2="1560" y2="600" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="1560,600 1572,587 1645,587 1645,613 1572,613" fill="#eaf2fb" stroke="#0b5cad" stroke-width="1.8"/>
+<text x="1580" y="605" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="13.5" font-weight="bold" font-style="normal" fill="#0b5cad" text-anchor="start">VBUS 5V</text>
+<text x="1150" y="752" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="11.5" font-weight="normal" font-style="normal" fill="#666" text-anchor="start">USBVBUS 최대 5.5V 허용 (표8) → VBUS 직결 가능</text>
+</svg>
