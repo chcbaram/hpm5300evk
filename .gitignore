@@ -21,3 +21,6 @@ CMakeUserPresets.json
 # 전역 gitignore(~/.gitignore_global)가 c_cpp_properties.json 을 제외하지만,
 # 본 저장소의 것은 ${env:...} 만 쓰고 머신 종속 경로가 없어 공유한다.
 !.vscode/c_cpp_properties.json
+
+firmware/hpm5361-fw/docs/flash_dump.bin
+firmware/hpm5361-fw/docs/flash_dump.md
