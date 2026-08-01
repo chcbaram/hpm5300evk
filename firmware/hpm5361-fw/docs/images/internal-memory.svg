@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="548" viewBox="0 0 900 548" role="img" aria-label="내장 메모리 실제 배치">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker></defs>
+<rect width="900" height="548" fill="#ffffff"/>
+<text xml:space="preserve" x="450" y="28" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="15" fill="#1f2328" text-anchor="middle" font-weight="600">내장 메모리 실제 배치 — build/hpm5361-fw.elf 실측</text>
+<text xml:space="preserve" x="220.0" y="60" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="700">ILM   128 KB</text>
+<rect x="120" y="70" width="200" height="34" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="112" y="83" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0000_0000</text>
+<text xml:space="preserve" x="130" y="91.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.vectors</text>
+<text xml:space="preserve" x="310" y="91.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">952 B</text>
+<rect x="120" y="104" width="200" height="30" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="112" y="117" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0000_03B8</text>
+<text xml:space="preserve" x="130" y="123.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.fast   (비어 있음)</text>
+<text xml:space="preserve" x="310" y="123.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">0 B</text>
+<rect x="120" y="134" width="200" height="262" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="130" y="269.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">미사용   약 127 KB</text>
+<text xml:space="preserve" x="112" y="409" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0002_0000</text>
+<line x1="120" y1="396" x2="320" y2="396" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="220.0" y="430" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#6a737d" text-anchor="middle" font-weight="400">벡터 테이블만 산다</text>
+<text xml:space="preserve" x="220.0" y="446" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#16a34a" text-anchor="middle" font-weight="600">99.3% 비어 있음</text>
+<text xml:space="preserve" x="585.0" y="60" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="700">DLM   128 KB</text>
+<rect x="460" y="70" width="250" height="30" rx="0" fill="#fee2e2" stroke="#dc2626" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="83" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_0000</text>
+<text xml:space="preserve" x="470" y="89.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">예약</text>
+<text xml:space="preserve" x="700" y="89.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">768 B</text>
+<rect x="460" y="100" width="250" height="30" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="113" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_0300</text>
+<text xml:space="preserve" x="470" y="119.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.data</text>
+<text xml:space="preserve" x="700" y="119.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">600 B</text>
+<rect x="460" y="130" width="250" height="46" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="143" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_0558</text>
+<text xml:space="preserve" x="470" y="157.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.bss</text>
+<text xml:space="preserve" x="700" y="157.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">19,624 B</text>
+<rect x="460" y="176" width="250" height="28" rx="0" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="189" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_5200</text>
+<text xml:space="preserve" x="470" y="194.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.noinit   ← 리셋 후 보존</text>
+<text xml:space="preserve" x="700" y="194.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">24 B</text>
+<rect x="460" y="204" width="250" height="24" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="217" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_5218</text>
+<text xml:space="preserve" x="470" y="220.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.tdata / .tbss / .framebuffer</text>
+<text xml:space="preserve" x="700" y="220.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">0 B</text>
+<rect x="460" y="228" width="250" height="40" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="241" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_5800</text>
+<text xml:space="preserve" x="470" y="252.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.noncacheable   USB DMA</text>
+<text xml:space="preserve" x="700" y="252.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">9,224 B</text>
+<rect x="460" y="268" width="250" height="36" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="281" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_7C08</text>
+<text xml:space="preserve" x="470" y="290.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.heap</text>
+<text xml:space="preserve" x="700" y="290.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">16,384 B</text>
+<rect x="460" y="304" width="250" height="36" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="317" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_BC08</text>
+<text xml:space="preserve" x="470" y="326.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">.stack</text>
+<text xml:space="preserve" x="700" y="326.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">16,384 B</text>
+<rect x="460" y="340" width="250" height="74" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="353" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_FC10</text>
+<text xml:space="preserve" x="470" y="381.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">미사용</text>
+<text xml:space="preserve" x="700" y="381.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">66,544 B</text>
+<rect x="460" y="414" width="250" height="44" rx="0" fill="#fee2e2" stroke="#dc2626" stroke-width="1.1"/>
+<text xml:space="preserve" x="452" y="427" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0009_7000</text>
+<text xml:space="preserve" x="470" y="440.0" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#1f2328" text-anchor="start" font-weight="400">BootROM BSS / RW / 스택</text>
+<text xml:space="preserve" x="700" y="440.0" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="end" font-weight="400">36 KB</text>
+<text xml:space="preserve" x="452" y="471" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="400">0x000A_0000</text>
+<line x1="460" y1="458" x2="710" y2="458" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="722" y="344" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#16a34a" text-anchor="start" font-weight="600">← _stack</text>
+<text xml:space="preserve" x="722" y="360" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">여유 29,680 B</text>
+<text xml:space="preserve" x="722" y="436" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="400">ROM API 호출 시</text>
+<text xml:space="preserve" x="722" y="450" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="400">겹칠 수 있다</text>
+<text xml:space="preserve" x="822.0" y="60" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="13" fill="#1f2328" text-anchor="middle" font-weight="700">AHB SRAM  32 KB</text>
+<text xml:space="preserve" x="762" y="86" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="400">0xF040_0000</text>
+<rect x="762" y="94" width="120" height="120" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="822.0" y="150" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#1f2328" text-anchor="middle" font-weight="400">.ahb_sram</text>
+<text xml:space="preserve" x="822.0" y="166" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="middle" font-weight="400">0 B</text>
+<text xml:space="preserve" x="822.0" y="236" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#16a34a" text-anchor="middle" font-weight="600">전부 비어 있음</text>
+<text xml:space="preserve" x="822.0" y="252" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="10.5" fill="#6a737d" text-anchor="middle" font-weight="400">DMA 버퍼 후보</text>
+<text xml:space="preserve" x="450" y="520" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#6a737d" text-anchor="middle" font-weight="400">.fast(ILM) 와 AHB SRAM 이 통째로 비어 있다 — 지연에 민감한 루프를 옮길 자리</text>
+</svg>

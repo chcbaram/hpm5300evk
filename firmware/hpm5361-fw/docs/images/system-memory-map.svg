@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="904" viewBox="0 0 830 904" role="img" aria-label="시스템 메모리 맵">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker></defs>
+<rect width="830" height="904" fill="#ffffff"/>
+<text xml:space="preserve" x="415" y="28" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="15" fill="#1f2328" text-anchor="middle" font-weight="600">시스템 메모리 맵 (UM 표29)</text>
+<text xml:space="preserve" x="415" y="48" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11.5" fill="#6a737d" text-anchor="middle" font-weight="400">32비트 주소 공간 전체 · 비례 축척 아님</text>
+<rect x="190" y="76" width="430" height="30" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="95" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0000_0000</text>
+<text xml:space="preserve" x="204" y="95" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">CPU0 ILM   명령 로컬 메모리</text>
+<text xml:space="preserve" x="606" y="95" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="106" width="430" height="30" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="125" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0006_0000</text>
+<text xml:space="preserve" x="204" y="125" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">ILM 별칭</text>
+<text xml:space="preserve" x="606" y="125" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="136" width="430" height="30" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="155" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0008_0000</text>
+<text xml:space="preserve" x="204" y="155" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">CPU0 DLM   데이터 로컬 메모리</text>
+<text xml:space="preserve" x="606" y="155" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="166" width="430" height="30" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="185" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x000A_0000</text>
+<text xml:space="preserve" x="204" y="185" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">DLM 별칭</text>
+<text xml:space="preserve" x="606" y="185" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="196" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="215" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x000C_0000</text>
+<text xml:space="preserve" x="204" y="215" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">FGPIO   CPU 로컬 버스 GPIO</text>
+<text xml:space="preserve" x="606" y="215" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">256 K</text>
+<rect x="190" y="226" width="430" height="30" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="245" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0104_0000</text>
+<text xml:space="preserve" x="204" y="245" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">ILM 미러</text>
+<text xml:space="preserve" x="606" y="245" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="256" width="430" height="30" rx="0" fill="#fafbfc" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="275" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x0106_0000</text>
+<text xml:space="preserve" x="204" y="275" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">DLM 미러</text>
+<text xml:space="preserve" x="606" y="275" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="286" width="430" height="30" rx="0" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="305" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x2000_0000</text>
+<text xml:space="preserve" x="204" y="305" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">BOOT ROM   부팅 코드 + ROM API</text>
+<text xml:space="preserve" x="606" y="305" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">128 K</text>
+<rect x="190" y="316" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="335" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x3000_0000</text>
+<text xml:space="preserve" x="204" y="335" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">DM   디버그 모듈</text>
+<text xml:space="preserve" x="606" y="335" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">1 M</text>
+<rect x="190" y="346" width="430" height="30" rx="0" fill="#fef3c7" stroke="#d97706" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="365" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0x8000_0000</text>
+<text xml:space="preserve" x="204" y="365" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">XPI0 창   내장 1MB NOR (XIP)</text>
+<text xml:space="preserve" x="606" y="365" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">255 M</text>
+<rect x="190" y="376" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="395" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xE400_0000</text>
+<text xml:space="preserve" x="204" y="395" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">PLIC   플랫폼 인터럽트 컨트롤러</text>
+<text xml:space="preserve" x="606" y="395" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">4 M</text>
+<rect x="190" y="406" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="425" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xE600_0000</text>
+<text xml:space="preserve" x="204" y="425" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">MCHTMR   머신 타이머 (1ms 틱)</text>
+<text xml:space="preserve" x="606" y="425" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">1 M</text>
+<rect x="190" y="436" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="455" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xE640_0000</text>
+<text xml:space="preserve" x="204" y="455" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">PLICSW   소프트웨어 인터럽트</text>
+<text xml:space="preserve" x="606" y="455" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">4 M</text>
+<rect x="190" y="466" width="430" height="102" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="483" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF000_0000</text>
+<text xml:space="preserve" x="204" y="483" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="600">APB 주변장치 ①</text>
+<text xml:space="preserve" x="216" y="500" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">GPTMR0~3 / UART0~7 / I2C0~3 / SPI0~3</text>
+<text xml:space="preserve" x="216" y="516" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">CRC / TSNS / MBX / EWDG0,1 / MISC</text>
+<text xml:space="preserve" x="216" y="532" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">DMAMUX / HDMA / GPIO0 / GPIOM</text>
+<text xml:space="preserve" x="216" y="548" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">MCAN0~3 / PTPC / QEI / QEO / MMC</text>
+<text xml:space="preserve" x="216" y="564" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">PWM / RDC / PLB / SYNT / SEI / TRGM0</text>
+<rect x="190" y="568" width="430" height="30" rx="0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="587" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF040_0000</text>
+<text xml:space="preserve" x="204" y="587" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">AHB SRAM (HRAM)</text>
+<text xml:space="preserve" x="606" y="587" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">32 K</text>
+<rect x="190" y="598" width="430" height="70" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="615" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF300_0000</text>
+<text xml:space="preserve" x="204" y="615" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="600">APB 주변장치 ②</text>
+<text xml:space="preserve" x="216" y="632" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">XPI0 / USB0 / SDP / SEC / MON / RNG</text>
+<text xml:space="preserve" x="216" y="648" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">OTP / KEYM / ADC0,1 / DAC0,1</text>
+<text xml:space="preserve" x="216" y="664" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">OPAMP0,1 / ACMP</text>
+<rect x="190" y="668" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="687" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF400_0000</text>
+<text xml:space="preserve" x="204" y="687" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">SYSCTL   시스템 제어</text>
+<text xml:space="preserve" x="606" y="687" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">256 K</text>
+<rect x="190" y="698" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="717" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF404_0000</text>
+<text xml:space="preserve" x="204" y="717" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">IOC   IO 컨트롤러</text>
+<text xml:space="preserve" x="606" y="717" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">256 K</text>
+<rect x="190" y="728" width="430" height="30" rx="0" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="747" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF40C_0000</text>
+<text xml:space="preserve" x="204" y="747" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="400">PLLCTLV2   PLL 컨트롤러</text>
+<text xml:space="preserve" x="606" y="747" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#6a737d" text-anchor="end" font-weight="400">256 K</text>
+<rect x="190" y="758" width="430" height="54" rx="0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="775" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF410_0000</text>
+<text xml:space="preserve" x="204" y="775" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="12" fill="#1f2328" text-anchor="start" font-weight="600">전원 관리 도메인</text>
+<text xml:space="preserve" x="216" y="792" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">PPOR / PCFG / PGPR0,1 / PIOC / PGPIO</text>
+<text xml:space="preserve" x="216" y="808" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#6a737d" text-anchor="start" font-weight="400">PTMR / PUART / PEWDG / PDGO</text>
+<line x1="190" y1="812" x2="620" y2="812" stroke="#d0d7de" stroke-width="1.1"/>
+<text xml:space="preserve" x="180" y="825" font-family="ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="400">0xF413_8000</text>
+<text xml:space="preserve" x="415" y="860" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11.5" fill="#6a737d" text-anchor="middle" font-weight="400">온칩 SRAM 288KB = ILM 128K + DLM 128K + AHB SRAM 32K (DS 1절)</text>
+<text xml:space="preserve" x="415" y="880" font-family="-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif" font-size="11" fill="#6a737d" text-anchor="middle" font-weight="400">ILM/DLM 은 로컬 주소 · 시스템 버스 별칭 · 미러 세 곳에서 보인다</text>
+</svg>
