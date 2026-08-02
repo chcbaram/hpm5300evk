@@ -40,7 +40,13 @@
  * ROM 부트로더가 0x80000400 에서 이 값을 읽어 XPI0 를 설정한다. 없으면 부팅하지 못한다.
  */
 #if defined(FLASH_XIP) && FLASH_XIP
-__attribute__ ((section(".nor_cfg_option"), used)) const uint32_t option[4] = {0xfcf90002, 0x00000005, 0x1000, 0x0};
+/*
+ * option[1] 하위 4비트 = 주파수 옵션
+ *   1:30MHz  2:50MHz  3:66MHz  4:80MHz  5:100MHz  6:120MHz  7:133MHz  8:166MHz
+ * 5(100MHz) -> 6(120MHz). 동일 MCU 상용 보드(HPM5361)도 6을 쓴다.
+ * 부팅 실패 시 BOOT0 스트랩으로 USB ISP 복구.
+ */
+__attribute__ ((section(".nor_cfg_option"), used)) const uint32_t option[4] = {0xfcf90002, 0x00000006, 0x1000, 0x0};
 #endif
 
 

@@ -315,94 +315,115 @@ s.note(60, 850, [
 s.save(f"{OUT}/sch-1-power.svg")
 
 # =====================================================================
-# SHEET 2 — 코어 DCDC + 내부 LDO 캡
+# SHEET 2 — 코어 전원 (외부 LDO) + 내부 LDO 캡
 # =====================================================================
-s = Sheet(1560, 900, "2 / 3   코어 전원  —  내장 DCDC (VDD_SOC)",
-          "데이터시트 Rev0.11 표7: L1 = 2.2~10uH (typ 4.7uH), C1 = 33~66uF")
+s = Sheet(1720, 1120, "2 / 3   코어 전원  —  외부 LDO (VDD_SOC 1.2V · CPU 400MHz)",
+          "내장 DCDC 미사용. UM 8.2.1: DCDC_IN / DCDC_LP / DCDC_SNS 를 10k 로 접지")
 
+# ---- +3V3D 입력 ----
 s.netflag(60, 180, "+3V3D", "right")
-s.wire((160, 180), (420, 180))
+s.wire((160, 180), (340, 180))
 s.dot(250, 180)
 s.cap(250, 180, "C4", "10uF/10V", sub="0603")
-s.dot(330, 180)
-s.cap(330, 180, "C37", "100nF", sub="0402")
 
-# MCU DCDC block
-s.rect(420, 130, 240, 340, fill="#f4f7fb")
-s.text(540, 118, "U1C", 15, anchor="middle", weight="bold")
-s.text(540, 492, "HPM5361ICB1", 13, anchor="middle", weight="bold")
-s.text(540, 300, "내장 DCDC", 14, anchor="middle", color=GRAY)
+# ---- U4 : 코어 LDO ----
+s.ic(340, 138, 190, 96, "U4", "AMS1117-1.2", "SOT-223 · 1A · TAB = VOUT")
+s.text(435, 178, "LDO", 16, anchor="middle", weight="bold")
+s.text(435, 202, "코어 1.2V", 12.5, anchor="middle", color=GRAY)
+s.line(306, 180, 340, 180)
+s.text(350, 185, "VIN", 12.5)
+s.text(323, 172, "3", 11, anchor="middle", color=ACC)
+s.line(530, 180, 564, 180)
+s.text(520, 185, "VOUT", 12.5, anchor="end")
+s.text(547, 172, "2", 11, anchor="middle", color=ACC)
+s.line(435, 234, 435, 250)
+s.gnd(435, 250)
+s.text(452, 248, "1  GND", 11.5, color=ACC)
 
-for (yy, num, nm, side) in [(180, 30, "DCDC_IN", "l"), (250, 29, "DCDC_LP", "r"),
-                            (330, 21, "DCDC_SNS", "r"), (420, 28, "DCDC_GND", "l")]:
-    if side == "l":
-        s.text(430, yy + 5, nm, 13)
-        s.text(402, yy - 8, str(num), 11, anchor="middle", color=ACC)
-    else:
-        s.text(650, yy + 5, nm, 13, anchor="end")
-        s.text(678, yy - 8, str(num), 11, anchor="middle", color=ACC)
+# ---- VDD_SOC 버스 ----
+s.wire((564, 180), (860, 180))
+s.netflag(860, 180, "VDD_SOC", "right")
+s.text(600, 152, "1.2V — 표9 균형모드 (1.15 / 1.175 / 1.30V, 400MHz)", 13, color=NETC, weight="bold")
+s.wire((955, 180), (955, 300), (1520, 300))
 
-# DCDC_GND
-s.wire((420, 420), (350, 420))
-s.gnd(350, 420, "단일점")
+for (xx, nm, val, sub) in [(1030, "C1", "22uF/6.3V", "0603"),
+                           (1130, "C2", "22uF/6.3V", "0603"),
+                           (1230, "C3", "22uF/6.3V", "0603"),
+                           (1380, "C5~C12", "100nF x8", "VDD_SOC 8핀 각각")]:
+    s.dot(xx, 300)
+    s.cap(xx, 300, nm, val, sub=sub)
 
-# DCDC_LP -> L1 -> VDD_SOC
-s.wire((660, 250), (740, 250))
-x, y = s.ind_h(740, 250, "L1", "4.7uH  C6807738")
-s.wire((x, y), (900, y))
-s.dot(900, 250)
-s.netflag(900, 250, "VDD_SOC", "right")
+s.rect(1520, 230, 90, 150, fill="#f4f7fb")
+s.text(1565, 218, "U1C", 14, anchor="middle", weight="bold")
+s.text(1565, 402, "VDD_SOC 8핀", 12.5, anchor="middle", weight="bold")
+s.text(1565, 282, "7, 17, 20, 44", 11, anchor="middle", color=ACC)
+s.text(1565, 298, "57, 69, 83, 94", 11, anchor="middle", color=ACC)
+s.text(1565, 334, "전부 연결", 11, anchor="middle", color=GRAY)
 
-# VDD_SOC bus
-s.wire((900, 250), (900, 330))
-s.wire((900, 330), (1460, 330))
-# DCDC_SNS kelvin
-s.wire((660, 330), (900, 330))
-s.dot(900, 330)
-s.text(700, 318, "켈빈 감지선 (전류 경로 아님)", 11.5, color=ACC)
+# ---- 미사용 DCDC 핀 ----
+s.rect(340, 430, 240, 250, fill="#fdf3f3")
+s.text(460, 418, "U1C", 15, anchor="middle", weight="bold")
+s.text(460, 702, "내장 DCDC — 미사용", 13, anchor="middle", weight="bold", color=ACC)
 
-for i, (xx, nm, val, sub) in enumerate([
-        (980, "C1", "22uF/6.3V", "0603"), (1080, "C2", "22uF/6.3V", "0603"),
-        (1180, "C3", "22uF/6.3V", "0603")]):
-    s.dot(xx, 330)
-    s.cap(xx, 330, nm, val, sub=sub)
+# 각 핀은 서로 독립적으로 10k 를 통해 접지된다 (직렬 아님)
+for (yy, num, nm, rf, xx) in [(485, 30, "DCDC_IN",  "R7", 940),
+                              (545, 29, "DCDC_LP",  "R8", 830),
+                              (605, 21, "DCDC_SNS", "R9", 720)]:
+    s.text(570, yy + 5, nm, 13, anchor="end")
+    s.text(598, yy - 8, str(num), 11, anchor="middle", color=ACC)
+    s.wire((580, yy), (xx, yy))
+    s.res_v(xx, yy, rf, "10k")
+    s.gnd(xx, yy + 56)
+s.text(720, 720, "3핀 각각 독립 10k → GND (직렬 아님)", 11.5, color=ACC)
 
-s.dot(1330, 330)
-s.cap(1330, 330, "C5~C12", "100nF x8", sub="VDD_SOC 8핀 각각")
+s.text(340, 655, "28", 11, anchor="middle", color=ACC)
+s.text(350, 668, "DCDC_GND", 13)
+s.wire((340, 662), (250, 662))
+s.gnd(250, 662, "단일점")
 
-# VDD_SOC pins box
-s.rect(1460, 250, 90, 170, fill="#f4f7fb")
-s.text(1505, 238, "U1C", 14, anchor="middle", weight="bold")
-s.text(1505, 442, "VDD_SOC 8핀", 12.5, anchor="middle", weight="bold")
-s.text(1505, 306, "7, 17, 20, 44", 11, anchor="middle", color=ACC)
-s.text(1505, 322, "57, 69, 83, 94", 11, anchor="middle", color=ACC)
-s.text(1505, 360, "전부 연결", 11, anchor="middle", color=GRAY)
-
-# internal LDO caps
-s.rect(420, 590, 240, 200, fill="#f4f7fb")
-s.text(540, 578, "U1C", 15, anchor="middle", weight="bold")
-s.text(540, 812, "내부 LDO 출력 — 외부 급전 금지", 12.5, anchor="middle", weight="bold", color=ACC)
-for (yy, num, nm) in [(650, 33, "VDD_PMCCAP"), (740, 23, "VDD_OTPCAP")]:
-    s.text(650, yy + 5, nm, 13, anchor="end")
-    s.text(678, yy - 8, str(num), 11, anchor="middle", color=ACC)
-    s.wire((660, yy), (800, yy))
-    s.dot(800, yy)
-
-s.cap(800, 650, "C25", "4.7uF", sub="0603")
-s.wire((800, 650), (900, 650))
-s.cap(900, 650, "C26", "100nF", sub="0402")
-s.cap(800, 740, "C27", "4.7uF", sub="0603")
-s.wire((800, 740), (900, 740))
-s.cap(900, 740, "C28", "100nF", sub="0402")
-
-s.note(1000, 590, [
-    "전류 (표19): 480/160MHz 전주변장치 ON → IDD 59.9mA @3.3V",
-    "DCDC 출력 ≈ 139mA @1.275V,  리플 83mA p-p (fsw 2MHz 가정)",
-    "→ 인덕터 Isat 요구 0.4A. 선정품 2.2A로 5배 여유.",
+s.note(1090, 430, [
+    "UM 8.2.1 원문:",
+    "  当用户选择使用外部的电源替代片上的 DCDC 为系统电源域供电时,",
+    "  建议把 DCDC 的相关引脚 DCDC_IN、DCDC_LP 和 DCDC_SNS",
+    "  通过 10k 欧姆电阻接地。",
     "",
-    "C1~C3 유효용량 (최악): 22 x 0.8 x 0.85 x 0.85 = 12.7uF x3 = 38uF",
-    "→ 규격 33~66uF 만족. 0805 22uF 2개(29uF)는 미달.",
-], w=520, title="수치 근거")
+    "→ 외부 전원으로 코어를 공급할 때 3핀을 10k 로 접지하라는",
+    "   벤더 정식 권장이다. L1 인덕터는 삭제한다.",
+    "",
+    "2층 PCB 결정에 따른 변경 — 전용 GND 플레인이 없으면",
+    "DCDC 스위칭 리턴과 96채널 아날로그 리턴이 포어를 공유해",
+    "최대 6.5 LSB 잡음이 실릴 수 있다. 스위처를 두지 않는다.",
+], w=580, title="왜 외부 LDO 인가")
+
+# ---- 내부 LDO 캡 ----
+s.rect(340, 780, 240, 190, fill="#f4f7fb")
+s.text(460, 768, "U1C", 15, anchor="middle", weight="bold")
+s.text(460, 992, "내부 LDO 출력 — 외부 급전 금지", 12.5, anchor="middle", weight="bold", color=ACC)
+for (yy, num, nm) in [(835, 33, "VDD_PMCCAP"), (920, 23, "VDD_OTPCAP")]:
+    s.text(570, yy + 5, nm, 13, anchor="end")
+    s.text(598, yy - 8, str(num), 11, anchor="middle", color=ACC)
+    s.wire((580, yy), (720, yy))
+    s.dot(720, yy)
+
+s.cap(720, 835, "C25", "4.7uF", sub="0603")
+s.wire((720, 835), (820, 835))
+s.cap(820, 835, "C26", "100nF", sub="0402")
+s.cap(720, 920, "C27", "4.7uF", sub="0603")
+s.wire((720, 920), (820, 920))
+s.cap(820, 920, "C28", "100nF", sub="0402")
+
+s.note(1090, 800, [
+    "코어 전류 @400MHz / 1.2V",
+    "  표20: DCDC_IN 59.9mA @3.3V, VDD_SOC 1.175V, 480MHz",
+    "  → 코어 ≈ 59.9 x 3.3 x 0.9 / 1.175 = 151mA @480MHz",
+    "  → 400MHz 환산 126mA, 1.2V 보정 129mA  →  설계 150mA",
+    "",
+    "U4 손실 = (3.3 - 1.2) x 0.150 = 315mW",
+    "  SOT-223 + 동박 645mm² (θJA 60℃/W) → ΔT 19℃",
+    "",
+    "C1~C3 유효용량(최악) 12.7uF x3 = 38uF",
+    "  → HPM 요구 33~66uF + AMS1117 요구 ≥22uF 동시 만족",
+], w=560, title="수치 근거")
 
 s.save(f"{OUT}/sch-2-core.svg")
 
