@@ -24,3 +24,4 @@ CMakeUserPresets.json
 
 firmware/hpm5361-fw/docs/flash_dump.bin
 firmware/hpm5361-fw/docs/flash_dump.md
+firmware/hpm5361-fw/docs/analysis/

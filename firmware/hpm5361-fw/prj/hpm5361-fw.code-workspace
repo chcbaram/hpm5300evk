@@ -1,8 +1,12 @@
 {
-	"folders": [  
+	"folders": [
     {
       "name": "firmware",
       "path": "../",
+    },
+    {
+      "name": "wish60-he",
+      "path": "../../wish60-he",
     }
   ],
   "settings": {

@@ -633,3 +633,83 @@ system_memory_map()
 internal_memory()
 lma_vma()
 clock_tree()
+
+
+# ──────────────────────────────────────────── 10. 보드 부트로더/펌웨어 메모리 맵
+def board_flash_map():
+    # (주소, 높이, 라벨, 크기, 채움, 테두리, 우측 주석)
+    segs = [
+        ("0x8000_0000", 24, "(미사용)",              "1,024 B",   GAP_F,   GAP_S,   ""),
+        ("0x8000_0400", 30, "nor_cfg_option",        "16 B",      ROM_F,   ROM_S,   "① ROM 이 읽어 XPI0 설정"),
+        (None,          18, "(미사용)",              "",          GAP_F,   GAP_S,   ""),
+        ("0x8000_1000", 32, "부트 헤더  tag=0xBF",   "144 B",     ROM_F,   ROM_S,   "② ROM 이 읽는다 (offset 0x2000)"),
+        (None,          18, "(미사용)",              "",          GAP_F,   GAP_S,   ""),
+        ("0x8000_3000", 54, "IAP 부트로더",          "75,888 B",  APP_F,   APP_S,   "③ ROM 이 여기로 점프"),
+        ("0x8001_5870", 24, "예약 / 공백",           "~42 KB",    GAP_F,   GAP_S,   ""),
+        ("0x8001_B000", 20, "테스트 패턴",           "16 B",      GAP_F,   GAP_S,   ""),
+        ("0x8001_D000", 32, "업데이트 플래그",       "4 B",       WARN_F,  WARN_S,  "앱이 쓰고 IAP 가 읽는다"),
+        ("0x8001_E000", 22, "시리얼 문자열",         "16 B",      PER_F,   PER_S,   ""),
+        ("0x8002_0000", 26, "매직  \"HPM\\n\"",      "4 B",       WARN_F,  WARN_S,  "④ IAP 가 검사하는 유일한 조건"),
+        ("0x8002_0004", 58, "앱 펌웨어",             "159,788 B", FLASH_F, FLASH_S, "⑤ IAP 가 여기로 점프"),
+        ("0x8004_7030", 28, "미사용",                "230 KB",    GAP_F,   GAP_S,   ""),
+        ("0x8008_0000", 38, "EEPROM 에뮬레이션",     "90,112 B",  RAM_F,   RAM_S,   "키맵 · 캘리브레이션"),
+        ("0x8009_FE90", 20, "뱅크 디스크립터",       "368 B",     RAM_F,   RAM_S,   ""),
+        ("0x800B_FFF0", 18, "마커 KS / CMPH",        "16 B",      PER_F,   PER_S,   ""),
+        ("0x800C_0000", 32, "미사용 (0xFF)",         "256 KB",    GAP_F,   GAP_S,   ""),
+    ]
+    top, X, W = 82, 262, 360
+    h = top + sum(x[1] for x in segs) + 104
+    s = Svg(1200, h, "보드 부트로더 / 펌웨어 메모리 맵")
+    s.text(600, 28, "보드 부트로더 / 펌웨어 메모리 맵", size=15, anchor="middle", weight="600")
+    s.text(600, 48, "보드 실측 · flash_dump.bin (1MB SiP 내장 NOR, XPI0 2번 핀그룹)",
+           size=11.5, anchor="middle", fill=MUTED)
+    s.text(600, 66, "ROM → 부트 헤더 → IAP → 매직 검사 → 앱",
+           size=11.5, anchor="middle", fill=ROM_S, weight="600")
+
+    y = top
+    keep_top = keep_bot = own_top = own_bot = None
+    for addr, hh, label, size_s, fill, stroke, note in segs:
+        s.rect(X, y, W, hh, fill, stroke, rx=0, sw=1.1)
+        if addr:
+            s.text(X - 10, y + 13, addr, size=11.5, anchor="end", mono=True)
+        s.text(X + 13, y + hh / 2 + 4, label, size=12,
+               mono=not any(ord(c) > 0x2FFF for c in label))
+        if size_s:
+            s.text(X + W - 12, y + hh / 2 + 4, size_s, size=11, anchor="end",
+                   mono=True, fill=MUTED)
+        if note:
+            s.text(X + W + 16, y + hh / 2 + 4, note, size=11,
+                   fill=stroke if stroke != GAP_S else MUTED, weight="600")
+        if addr == "0x8000_0400":
+            keep_top = y
+        if addr == "0x8001_E000":
+            keep_bot = y + hh
+        if addr == "0x8002_0000":
+            own_top = y
+        if addr == "0x8004_7030":
+            own_bot = y + hh
+        y += hh
+    s.text(X - 10, y + 13, "0x8010_0000", size=11.5, anchor="end", mono=True)
+    s.line(X, y, X + W, y, GAP_S, 1.1)
+
+    # 좌측 브래킷 — 보존 필수 / 자체 펌웨어 영역
+    def bracket(x, y0, y1, color, l1, l2):
+        s.path(f"M {x+12},{y0} L {x},{y0} L {x},{y1} L {x+12},{y1}", color, 1.8)
+        cy = (y0 + y1) / 2
+        s.text(x - 8, cy - 5, l1, size=11, anchor="end", fill=color, weight="600")
+        s.text(x - 8, cy + 10, l2, size=10.5, anchor="end", fill=MUTED)
+
+    bracket(152, keep_top, keep_bot, ROM_S, "보존 필수", "건드리면 부팅 불가")
+    bracket(152, own_top, own_bot, FLASH_S, "자체 펌웨어", "384 KB 가용")
+
+    s.rect(40, h - 84, 1120, 64, "#fff7ed", "#ea580c", rx=4)
+    s.text(56, h - 64, "자체 펌웨어 조건 — 0x8002_0000 에 매직 \"HPM\\n\" 4바이트, 0x8002_0004 가 진입점. "
+                       "CRC·서명·길이 검사는 없다.", size=11.5, weight="600")
+    s.text(56, h - 46, "링커 FLASH 를 ORIGIN=0x8002_0000 / LENGTH=0x60000 으로 묶으면 EEPROM(0x8008_0000~) 을 "
+                       "침범하지 않아 벤더 펌웨어를 완전 복원할 수 있다.", size=11, fill=MUTED)
+    s.text(56, h - 29, "업데이트 모드 진입 = 매직 없음  또는  PA09 = LOW  또는  0x8001_D000 != 0xFFFF_FFFF",
+           size=11, fill=MUTED)
+    s.save("board-flash-map.svg")
+
+
+board_flash_map()
