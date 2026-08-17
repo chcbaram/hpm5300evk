@@ -24,4 +24,6 @@ CMakeUserPresets.json
 
 firmware/hpm5361-fw/docs/flash_dump.bin
 firmware/hpm5361-fw/docs/flash_dump.md
-firmware/hpm5361-fw/docs/analysis/
+# 덤프·디스어셈블은 펌웨어 버전마다 폴더가 하나씩 는다 (analysis/, analysis-v173/, ...).
+# 바이너리와 어셈은 깃에 올리지 않으므로 접두사로 통째로 막는다.
+firmware/hpm5361-fw/docs/analysis*/
